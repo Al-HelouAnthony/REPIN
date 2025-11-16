@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton2 =  document.getElementById('next_page2');
     const nextButton3 =  document.getElementById('next_page3');
     const weightGoal = document.getElementById('weight_goal');
-    const hoursGoal = document.getElementById('hours_goal');
     const prevButton1 = document.getElementById('prev_page1');
     const prevButton2 = document.getElementById('prev_page2');
     const speedValue = document.getElementById('speed_value');
@@ -44,6 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const break6 = document.getElementById('break6');
     const break7 = document.getElementById('break7');
     const break8 = document.getElementById('break8');
+    const startupButton = document.getElementById('create_plan');
+    const repnImg = document.getElementById('repn_img');
+    const repnTxt = document.getElementById('repn_init_text');
     
     // This variable is correct
     const bedTimeInput = document.getElementById('bed_time'); 
@@ -52,6 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // NEW: RECALCULATE BUTTON
     const recalculateBtn = document.getElementById('recalculate-btn');
 
+    startupButton.addEventListener('click', function() {
+        startupButton.classList.add('is-hidden');
+        repnImg.classList.add('is-hidden');
+        repnTxt.classList.add('is-hidden');
+        ageInput.classList.remove('is-hidden');
+        weightInput.classList.remove('is-hidden');
+        heightInput.classList.remove('is-hidden');
+        sexGroup.classList.remove('is-hidden');
+        nextButton1.classList.remove('is-hidden');
+        initText.classList.remove('is-hidden');
+        infoText.classList.remove('is-hidden');
+
+    });
 
     // All your existing button listeners (no changes here)
     nextButton1.addEventListener('click', function() {
@@ -72,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         break5.classList.add('is-hidden');
         break6.classList.add('is-hidden');
         break8.classList.add('is-hidden');
+        
         
         // --- FIX 1: Sleep question is NOT on this page ---
         // (Removed line that hid sleep_group)
