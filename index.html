@@ -1,0 +1,196 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="gemini_style.css">
+        <script src="script.js"></script>
+
+    </head>
+    <body id="body" style="background-color: #00031c;">
+    <div id="welcome_box" class="welcome_box">
+        <h1 id="init_text" class="init_text"><strong>Tell us about yourself</strong>
+        </h1>
+        <p id="info_txt" class="info_txt">This information will be used to generate your personalized workout plan</p>
+        <br id="break1">
+        <br>
+        <input id="age" type="text" class="attribute" name="age" placeholder="Enter your age">
+        <br id="break2">
+        <input id="weight" type="text" class="attribute" name="weight" placeholder="Enter your weight (kg)">
+        <br id="break3">
+        <input id="height" type="text" class="attribute" name="height" placeholder="Enter your height (cm)">
+        
+
+        <div id="sex_group">
+            <p class="question">What is your sex?</p>
+            <select id="sex_value" class="value" name="sex">
+                <option value="" disabled selected>Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <button id="next_page1" class="button1">Next</button>
+
+
+
+        <div id="workout_group" class="is-hidden">
+            <p class="question">How often do you wish work out?</p>
+            <select id="workout_amount" class="value" name="workout_amount">
+                <option value="" disabled selected>Select</option>
+                <option value="lightly_active">Lightly active(2 days)</option>
+                <option value="active">Active(5 days)</option>
+                <option value="very_active">Very active(6 days)</option>
+                <option value="extra_active">Extra active(2x / 6 days)</option>
+            </select>
+            <br id="break4">
+        </div>
+        <br id="break8">
+
+
+        <div id="goal_group" class="is-hidden">
+            <p class="question">What is your goal?</p>
+            <select id="goal_value" class="value" name="goal_value">
+                <option value="" disabled selected>Select</option>
+                <option value="cut">Cut</option>
+                <option value="bulk">Bulk</option>
+                <option value="maintain">Maintain</option>
+            </select>
+            <br id="break5">
+        </div>
+        
+        <br id="break7">
+        <input id="weight_goal" type="text" class="attribute is-hidden" name="goal_weight" placeholder="Enter your weight goal (kg)">
+
+        <p id="speed_question" class="question is-hidden"></p>
+        <select id="speed_value" class="value is-hidden" name="speed_value">
+            <option value="" disabled selected>Select</option>
+            <option value="slow">Slow</option>
+            <option value="medium">Medium</option>
+            <option value="fast">Fast</option>
+        </select>
+        <br id="break6">
+
+        <div id="plan_group" class="is-hidden">
+            <p class="question">What do you wish to improve in your body?</p>
+            <select id="plan_value" class="value" name="plan_value">
+                <option value="" disabled selected>Select</option>
+                <option value="strength">Strength</option>
+                <option value="muscle">Muscle</option>
+                <option value="both">Both</option>
+            </select>
+            <br>
+        </div>
+        <div id="sleep_group" class = 'is-hidden'>
+            <p class="question">What time do you go to bed?</p>
+            <select id="bed_time" class="value" name="bed_time">
+                <option value="" disabled selected>Select</option>
+                <option value="8 pm">9:00 PM</option>
+                <option value="9 pm">10:00 PM</option>
+                <option value="10 pm">11:00 PM</option>
+                <option value="11 pm">12:00 AM</option>
+                <option value="12 am">1:00 AM </option>
+                <option value="1 am">2:00 AM</option>
+            </select>
+        </div>
+        
+        <br>
+        
+        <button id="next_page2" class="button1 is-hidden">Next</button>
+        <button id="prev_page1" class="button1 is-hidden">Previous</button> 
+        <button id="next_page3" class="button1 is-hidden">Generate Plan</button>
+        <button id="prev_page2" class="button1 is-hidden">Previous</button>
+        
+        
+        <p id="load_txt1" class="load_text is-hidden">Calculating calories</p>
+        <p id="load_txt2" class="load_text is-hidden">Determining macros</p>
+        <p id="load_txt3" class="load_text is-hidden">Finding your split</p>
+        <p id="load_txt4" class="load_text is-hidden">Associating exercices</p>
+        <p id="load_txt5" class="load_text is-hidden">It's all done!</p>
+        <img src="assests/loading_img.gif" id="load_img" class="load_img is-hidden">
+
+    </div>
+
+<div id="dashboard_container" class="is-hidden">
+        
+        <nav class="dash-nav">
+            <div class="nav-logo">
+                <img src="assests/repn logo.jpg" alt="REPIN' Logo" class="nav-logo-img">
+            </div>
+            
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Dashboard</a>
+                <a href="#" id="recalculate-btn" class="nav-link">Recalculate</a>
+            </div>
+        </nav>
+
+        <div class="dash-grid">
+
+            <div class="dash-column-1">
+                <div class="dash-card nutrition-card">
+                    <p>YOUR DAILY CALORIE GOAL</p>
+                    <h1 id="calorie-goal">...</h1>
+                    
+                    <div id="macro-details">
+                        </div>
+                    <hr style="border-color: #333; margin: 1rem 0;">
+                    
+                    <div id="other-nutrition-details">
+                        </div>
+                </div>
+                
+                <div class="dash-card sleep-card">
+                    <p>IDEAL WAKE-UP TIME</p>
+                    <h1 id="wake-up-time">...</h1>
+                    <p>Based on 8.5 hours of sleep</p>
+                    <div class="sleep-footer">
+                        <span>OPTIMAL</span>
+                        <span>WAKE</span>
+                        <span>TIME</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="workout-card-1" class="dash-card workout-card">
+                <h2>Your Workout Plan (Option 1)</h2>
+                <p class="duration">WEEKLY SCHEDULE</p>
+                
+                <div class="weekly-plan">
+                    <div>
+                        <h3 id="workout-split-name-1">...</h3>
+                        <p>Your recommended split</p>
+                    </div>
+                    <span class="plan-arrow">&rarr;</span>
+                </div>
+                
+                <div id="weekly-plan-tags-1">
+                    </div>
+                
+                <hr style="border-color: #333; margin: 1.5rem 0;">
+                
+                <div id="workout-plan-container-1">
+                    </div>
+            </div>
+
+            <div id="workout-card-2" class="dash-card workout-card">
+                <h2>Your Workout Plan (Option 2)</h2>
+                <p class="duration">WEEKLY SCHEDULE</p>
+                
+                <div class="weekly-plan">
+                    <div>
+                        <h3 id="workout-split-name-2">...</h3>
+                        <p>Your recommended split</p>
+                    </div>
+                    <span class="plan-arrow">&rarr;</span>
+                </div>
+                
+                <div id="weekly-plan-tags-2">
+                    </div>
+                
+                <hr style="border-color: #333; margin: 1.5rem 0;">
+                
+                <div id="workout-plan-container-2">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+    </body>
+</html>

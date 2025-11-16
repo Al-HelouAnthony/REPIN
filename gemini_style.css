@@ -1,0 +1,426 @@
+body {
+    background-color: #0B0F19; /* New dark background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: #ffffff; /* <-- Default white text */
+}
+
+/* Main Container/Welcome Box */
+.welcome_box {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Softer, deeper shadow */
+    width: 90%; /* Increase width slightly for better mobile viewing */
+    max-width: 480px; /* Set a max-width for large screens */
+    /* Remove fixed height to allow content to dictate size */
+    margin: 40px auto; /* More margin on top/bottom */
+    padding: 30px;
+    text-align: center;
+    background-color: #333; /* Clean white background */
+    border: none; /* Remove border */
+    border-radius: 16px; /* Increased radius for a softer look */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(17, 152, 210, 0.9);
+}
+
+/* Optional: Slight lift on hover */
+.welcome_box:hover {
+    transform: translateY(-2px);
+}
+
+/* Initial Text/Header */
+.init_text {
+    font-size: 38px;
+    color: #00A9FF; /* Professional blue primary color */
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-shadow: 0 0 30px rgba(17, 152, 210, 0.6);
+}
+
+/* Info Text */
+.info_txt {
+    color: #ffffff; /* Muted grey for supporting text */
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+/* Input Fields (Age, Weight, Height, Goals) */
+.attribute {
+    margin: 10px 0; /* Vertical margin only */
+    width: 55%; /* Full width of the container */
+    padding: 15px; /* Increased padding */
+    text-align: center; /* Text alignment inside the input */
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #ced4da; /* Subtle grey border */
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+/* Input Focus State */
+.attribute:focus {
+    border: 3px solid #007bff;
+    box-shadow: 0 0 20px rgba(17, 152, 210, 0.9); /* Blue focus ring */
+    outline: none; /* Remove default outline */
+}
+
+/* Buttons */
+.button1 {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: 55px; /* Slightly reduced height */
+    font-size: 20px;
+    color: #ffffff; /* White text on button */
+    /* Fades from a dark gray to your glowing blue */
+    background-image: linear-gradient(90deg, #00aaff, #007bff); /* Primary blue button color */
+    border: 1px solid #007bff; /* Solid blue border */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: background-image 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    font-weight: 600;
+    
+
+}
+
+/* Button Hover State */
+.button1:hover {
+    background-image: linear-gradient(90deg, #0078b4, #007bff); /* Darker blue on hover */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+    
+}
+
+/* Button Active/Click State */
+.button1:active {
+    background-color: #004085; /* Even darker blue */
+    transform: translateY(2px); /* Simulate a press down */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Questions Text */
+.question {
+    font-size: 18px;
+    color: #00A9FF; /* Darker text for main questions */
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-shadow: 0 0 20px rgba(17, 152, 210, 0.7);
+}
+
+/* Select Dropdowns */
+.value {
+    width: 100%;
+    max-width: 250px;
+    height: 45px;
+    padding: 0 10px;
+    text-align: left;
+    font-size: 18px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none; /* Remove default system styling for a cleaner look */
+    /* Add a custom arrow if desired (not included here for simplicity) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23888'%3E%3Cpath d='M8 12L0 4h16z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px;
+}
+.value:focus{
+    box-shadow: 0 0 15px rgba(17, 152, 210, 1);
+    border: 0px;
+}
+/* Loading Text */
+.load_text {
+    color: #007bff;
+    font-size: 32px; /* Smaller, cleaner loading text */
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* --- Loading Image --- */
+/* --- Loading Image --- */
+/* --- Fix for Loading Screen --- */
+.load_text {
+    text-align: center; /* This will center the text */
+}
+
+.load_img {
+    display: block;
+    margin: 30px auto 0 auto; /* This will center the image */
+}
+
+/* Top Menu (Post-generation) */
+.top_menu {
+    width: 100%;
+    height: 70px; /* Fixed height for a header bar */
+    text-align: center;
+    background-color: #212529; /* Dark, contrasting color for a sleek header */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Utility Class */
+.is-hidden {
+    display: none;
+}
+
+
+/* --- REPIN DASHBOARD STYLES --- */
+
+/* New Body Background */
+/* This will be set by JS, but good to have a fallback */
+body.dashboard-active {
+    background-color: #0B0F19; /* The dark blue from the image */
+}
+
+#dashboard_container {
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0 2rem;
+}
+
+/* 1. Navigation Bar */
+.dash-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+/* Updated logo container to use Flexbox */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* This adds space between the logo and the text */
+}
+
+/* New rule for the logo image */
+.nav-logo-img {
+    height: 60px; /* You can adjust this size */
+    border-radius: 8px; /* This makes the corners rounded */
+    box-shadow: 0 0 20px rgba(17, 152, 210, 0.9);
+}
+
+/* New rule for the logo text */
+.nav-logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links .nav-link {
+    color: #888;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.nav-links .nav-link.active {
+    color: #fff;
+    font-weight: bold;
+}
+.nav-links .nav-link:hover {
+    color: #fff;
+}
+/* 2. Dashboard Grid */
+.dash-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr; /* 3-column layout */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Base Card Style */
+.dash-card {
+    background-color: #161A25; /* Dark card color */
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(17, 152, 210, 0.7);
+}
+
+/* Column 1: Nutrition & Sleep */
+.dash-column-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nutrition-card h1 {
+    font-size: 4rem;
+    color: #fff;
+    margin: 1rem 0;
+}
+.nutrition-card p {
+    color: #aaa;
+}
+
+.sleep-card h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin: 1rem 0;
+}
+.sleep-card p { color: #aaa; }
+.sleep-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    color: #00A9FF; /* Blue text */
+    font-weight: bold;
+}
+
+/* Column 2: Workout Plan */
+.workout-card {
+    background-color: #1C212E; /* Slightly different card color */
+}
+.workout-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.workout-card .duration {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+.muscle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.muscle-btn {
+    background: #333842;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.muscle-btn.active {
+    background: #00A9FF; /* Active blue */
+}
+
+.weekly-plan {
+    background: #2A3040;
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.weekly-plan h3 {
+    margin: 0;
+    margin-bottom: 0.25rem;
+}
+.weekly-plan p {
+    color: #aaa;
+    margin: 0;
+}
+.plan-arrow {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+#weekly-plan-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+.workout-tag {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.workout-tag.push { background: #FFD23F; color: #6A4C00; }
+.workout-tag.pull { background: #00A9FF; color: #004466; }
+.workout-tag.legs { background: #3EFF8B; color: #006622; }
+
+/* Column 3: Start Button */
+.start-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+.start-logo {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #00A9FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 30px rgba(0, 169, 255, 0.5);
+}
+.start-button {
+    background: #00A9FF;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(0, 169, 255, 0.5);
+}
+
+/* --- NEW STYLES FOR WORKOUT LIST --- */
+
+#workout-plan-container {
+    max-height: 400px; /* Set a max height */
+    overflow-y: auto; /* Add a scrollbar if it gets too long */
+    padding-right: 10px; /* Space for the scrollbar */
+}
+
+.workout-day {
+    margin-bottom: 1.5rem;
+}
+
+.workout-day h3 {
+    color: #00A9FF;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+.workout-day ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.workout-day li {
+    background: #2A3040;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.workout-day li strong {
+    font-size: 1rem;
+}
+
+.workout-day li span {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: right;
+    line-height: 1.4;
+}
+/* Hide the redundant workout tags */
+#weekly-plan-tags-1,
+#weekly-plan-tags-2 {
+    display: none;
+}
